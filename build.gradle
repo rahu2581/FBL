@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.5.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'fbl'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	compile ('org.springframework.integration:spring-integration-core:4.0.3.RELEASE')
+	compile ('org.springframework.integration:spring-integration-http:4.0.3.RELEASE')
+	compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("junit:junit")
+}
+
